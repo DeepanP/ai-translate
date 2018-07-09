@@ -1,0 +1,21 @@
+{
+  "name": "apollo-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "aws-amplify": "^0.4.1",
+    "buffer": "^5.1.0",
+    "react": "^16.4.1",
+    "react-art": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-native-web": "^0.8.8",
+    "react-scripts": "1.1.4",
+    "util": "^0.10.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
