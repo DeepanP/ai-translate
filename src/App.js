@@ -123,7 +123,7 @@ export default class App extends Component {
       const translation = await API.graphql(graphqlOperation(query, { sentence: this.state.sentence, code: code }))
       const { sentence } = translation.data.getTranslatedSentence
       const mp3Url = `https://s3.amazonaws.com/lambda-ai/${sentence}`
-      this.setState({ mp3Url, loading: false })
+      this.setState({ mp3Url, loading: false });
     } catch (error) {
       console.log('error translating : ', error)
       this.setState({ loading: false })
@@ -131,22 +131,9 @@ export default class App extends Component {
   }
   playSound = () => {
     console.log(this.state.mp3Url);
-    /*const translate = new Sound(this.state.mp3Url, null, (error) => {
-      if (error) {
-        console.log('failed to load the sound', error);
-        return;
-      }
-      console.log('duration in seconds: ' + translate.getDuration() + 'number of channels: ' + translate.getNumberOfChannels());
-      translate.play((success) => {
-        if (success) {
-          console.log('successfully finished playing');
-          this.setState({ sentence: '' })} else {
-          console.log('playback failed due to audio decoding errors');
-          translate.reset();
-        }
-      });
-
-    });*/
+    var translated = new Audio(this.state.mp3Url);
+    translated.play();
+    
   }
   render() {
     return (
